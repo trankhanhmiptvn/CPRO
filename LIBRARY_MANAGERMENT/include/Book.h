@@ -11,6 +11,7 @@ typedef struct {
     int  is_borrowed; //0: available; 1: borrowed 
 } Book;
 
+
 void print_book(const Book *book);
 
 #endif

@@ -11,6 +11,6 @@ typedef struct {
     int borrowed_count;
 } User;
 
-void print_user(const User *user);
+void print_user(const User *u);
 
 #endif

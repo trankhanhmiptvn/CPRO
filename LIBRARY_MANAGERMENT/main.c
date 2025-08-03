@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-#include "Library.h"
+#include "Library.h" 
+#include "Book_Manager.h"
+#include "User_Manager.h"
+#include "Loan_Manager.h"
 
 int main() {
     Library lib;

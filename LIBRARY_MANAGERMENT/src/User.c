@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include "User.h"
 #include <stddef.h>
+#include "User.h"
+
 void print_user(const User *u){
     if (u == NULL) {
         printf("Invalid user ID.\n");
@@ -18,3 +19,4 @@ void print_user(const User *u){
         }
     }
 }
+
