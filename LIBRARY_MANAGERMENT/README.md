@@ -1,1 +1,1 @@
-# CPRO
+# CPRO_EXERCISES
