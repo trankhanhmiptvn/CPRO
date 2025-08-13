@@ -19,5 +19,11 @@ typedef enum {
     MODE_AUTO,
     MODE_MANUAL
 } system_mode_t;
-extern system_mode_t current_mode;
+
+typedef struct
+{
+    float temp;
+    float humi;
+} Sensor_data_t;
+
 #endif

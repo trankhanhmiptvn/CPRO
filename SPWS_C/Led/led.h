@@ -5,5 +5,6 @@
 
 void init_led();
 void set_led_status(led_status_t status);
+led_status_t get_led_status();
 
 #endif

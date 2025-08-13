@@ -14,25 +14,18 @@ void setup() {
     init_pump();
     init_led();
     init_buttons();
-    init_system_state();
     printf("===============================================\n");
 }
 
 void loop() {
-    printf("=====Check1====\n");
-    scan_input();
-    // Xử lý nút nhấn 
-    handle_mode_button();
-    handle_manual_pump_button();
-    printf("=====Check1====\n");
     static unsigned long last_check = 0;
     if (millis() - last_check >= SENSOR_CHECK_INTERVAL_MS) {
-       printf("=====Check2====\n");
-      update_system_state();
-       printf("=====Check2====\n");
-      monitor_and_display_status();
+      simulate_system_input();
+      get_system_state();
       last_check = millis();
     }
+    control_system_state();
+    monitor_and_display_status();
 
 }
 int main() {

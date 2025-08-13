@@ -5,8 +5,9 @@
 #include "type.h"
 
 void init_buttons();
-bool get_and_clear_mode_button_flag();
-bool get_and_clear_pump_button_flag();
-void update_buttons_from_keyboard();
+bool get_mode_pressed();
+bool get_pump_pressed();
+void simulate_mode_pressed();
+void simulate_pump_pressed();
 
 #endif

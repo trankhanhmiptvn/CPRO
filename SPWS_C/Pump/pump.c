@@ -1,17 +1,17 @@
 #include "pump.h"
 #include <stdio.h>
 
-static pump_state_t current_pump_state = PUMP_OFF;
+volatile pump_state_t pump_st;
 
 void init_pump(void) {
-    current_pump_state = PUMP_OFF;
     printf("[PUMP] Khởi tạo: Bơm tắt.\n");
+     pump_st = PUMP_OFF;
 }
 
 void set_pump_state(pump_state_t state) {
-    current_pump_state = state;
+    pump_st = state;
 }
 
 pump_state_t get_pump_state(void) {
-    return current_pump_state;
+    return pump_st;
 }

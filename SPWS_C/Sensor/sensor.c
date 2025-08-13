@@ -2,24 +2,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
-
+// Cờ báo hiệu nút đã nhấn
+volatile Sensor_data_t sensor;
 
 void init_sensor() {
-    srand(time(NULL)); // Khởi tạo random
-    printf("[SENSOR] Khởi tạo cảm biến (mô phỏng).\n");
+    printf("[SENSOR] Khởi tạo cảm biến.\n");
+    sensor.temp = 0.00;
+    sensor.humi = 0.00;
 }
 
-float read_temperature() {
-    float temp;
-    printf("Nhập nhiệt độ (°C): ");
-    scanf("%f", &temp);
-    return temp;
+void simulate_temperature() {
+    printf("\nNhập nhiệt độ (°C): ");
+    scanf("%f", &sensor.temp);
 }
 
-float read_humidity() {
-    float hum;
-    printf("\nNhập độ ẩm (%%): ");
-    scanf("%f", &hum);
-    return hum;
+void simulate_humidity() {
+    printf("Nhập độ ẩm (%%): ");
+    scanf("%f", &sensor.humi);
+}
+
+float get_temperature() {
+    return sensor.temp;
+}
+float get_humidity() {
+    return sensor.humi;
 }

@@ -3,25 +3,14 @@
 
 #include "type.h"
 
-// Khởi tạo trạng thái hệ thống
-void init_system_state();
+//Cấu hình đầu vào hệ thống, nhiệt độ, độ ẩm, chế độ hoạt động, trang thái bơm
+void simulate_system_input();
 
-// Hàm gọi định kỳ để cập nhật hệ thống (FSM logic chính)
-void update_system_state();
+// Lấy trạng thái hệ thống
+void get_system_state();
 
-// Xử lý khi nút chuyển chế độ được nhấn
-void handle_mode_button();
-
-// Xử lý khi nút tưới thủ công được nhấn
-void handle_manual_pump_button();
-
-void scan_input();
-
-// Các hàm getter trạng thái
-system_mode_t get_current_mode();
-pump_state_t get_current_pump_state();
-led_status_t get_current_led_status();
-
+//Điều  khiển bơm, led theo chế độ hoạt động và nhiệt độ, độ ẩm
+void control_system_state();
 //Lấy thời gian hệ thống
 unsigned long millis();
 
