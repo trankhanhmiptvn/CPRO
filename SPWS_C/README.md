@@ -99,4 +99,4 @@ make test_button
 ---
 
 ## Tác giả
-- **Khánh** – Kỹ sư phát triển hệ thống nhúng
+- **TVK** 
