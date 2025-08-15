@@ -10,7 +10,7 @@ Người dùng có thể:
 - Xóa toàn bộ LED
 - Giải phóng tài nguyên khi không dùng
 
-## 📂 Cấu trúc thư mục
+## Cấu trúc thư mục
 ```
 .
 ├── app
@@ -37,11 +37,13 @@ Người dùng có thể:
     └── test_led_driver.c  # Testcase cho driver LED
 ```
 
-## 🚀 API chính
+##  API chính
 ```c
 typedef enum {
-    LED_OK = 0,
-    LED_ERROR
+    LED_OK        =  0, //Thành công
+    LED_ERR_ALLOC = -1, //Lỗi cấp phát bộ nhớ
+    LED_ERR_INDEX = -2, //Lỗi số lượng pixel không phù hợp
+    LED_ERR_INIT  = -3  // Lỗi buffer chưa khởi tạo đã sử dụng
 } led_status_t;
 
 // Khởi tạo dải LED
@@ -63,7 +65,7 @@ led_status_t led_fill(uint8_t r, uint8_t g, uint8_t b);
 led_status_t led_clear(void);
 ```
 
-## 📋 Kịch bản kiểm thử trong `app/app_main/main.c`
+##  Kịch bản kiểm thử trong `app/app_main/main.c`
 1. Khởi tạo 10 pixel: `led_init(10)`
 2. Kiểm tra buffer ban đầu toàn `0`
 3. Đặt màu:
